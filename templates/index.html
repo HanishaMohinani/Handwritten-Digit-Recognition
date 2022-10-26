@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TE-PROJECT</title>
+	<style>
+body {
+font-family: Times New Roman;
+margin: 0;
+}
+.header {
+padding: 8px;
+text-align: center;
+background: #fa55aa;
+color: white;
+font-size: 18px;
+font-family:verdana;
+}
+
+
+.fixed-header
+{
+width: 100%;
+
+background: #333;
+padding: 8px 0;
+color: #fff;
+padding-top: 8px;
+padding-bottom: 8px;
+}
+
+.container{
+width: 80%;
+margin: 0 auto;
+text-align: center;
+}
+nav a{
+color: #fff;
+padding: 7px 25px;
+display: inline-block;
+font-size: 20px;
+text-align: center;
+text-decoration: none;
+}
+a:hover {
+  background-color: gold;
+}
+
+input:hover + label,
+input:focus + label {
+  transform: scale(1.02);
+}
+.file-input label {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: maroon;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .2s ease-out;
+}
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+}
+</style>
+</head>
+<body style="background-color:white">
+
+
+	<div class="header">
+	<h1>Handwritten Digit Recognition </h1>
+	</div>
+
+	<center>
+	 <form method="post" action="/" enctype="multipart/form-data"  >
+	  <br><input type="file" name="file" autocomplete="off"  required style="padding:20px;color:red;">
+		 <button name='btn' type="submit" value="Submit">Submit</button>&nbsp;
+	 </form>
+	</center>
+
+	{% if filename!='': %}
+		<div align="center">
+
+			<img src="{{ filename }}" id="displayimg" height="180" width="200">
+		</div>
+	{% endif %}
+
+	<center>
+		<p style="color:maroon; font-style:bold;font-size:35px; margin-top:15px;margin-bottom:10px">Prediction:</p>
+	</center>
+		<div align="center"  style="background-color:white;padding:2px;margin-left:20%;margin-right:20%;border-radius:5px" align="center"style="background-color:lightgray; color:white;font-size:20px">
+
+			<pre style="font-size:35px">{{ text }}</pre>
+		</div>
+
+
+
+</body>
+</html>
+
+
